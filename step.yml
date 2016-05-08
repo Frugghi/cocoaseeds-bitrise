@@ -1,0 +1,27 @@
+title: Run CocoaSeeds install
+summary: |-
+  You don't need to keep the installed seeds in your repo, simply add this step
+  and Bitrise will do the pod install for you on the VM!
+description: |-
+  Run CocoaSeeds install (`$ seed install`) in your App's directory.
+website: https://github.com/Frugghi/cocoaseeds-bitrise
+source_code_url: https://github.com/Frugghi/cocoaseeds-bitrise
+support_url: https://github.com/Frugghi/cocoaseeds-bitrise/issues
+host_os_tags:
+  - osx-10.10
+project_type_tags:
+  - ios
+type_tags:
+  - xcode
+  - cocoaseeds
+  - seed
+dependencies: []
+is_requires_admin_user: false
+is_always_run: false
+is_skippable: false
+inputs:
+  - source_root_path: "$BITRISE_SOURCE_DIR"
+    opts:
+      title: "Source Code Directory path."
+      is_expand: true
+      is_required: true
