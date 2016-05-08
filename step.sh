@@ -12,15 +12,24 @@ if [ -z "${source_root_path}" ]; then
 fi
 print_and_do_command_exit_on_error cd "${source_root_path}"
 
-write_section_start_to_formatted_output "# Installing CocoaSeeds"
-print_and_do_command_exit_on_error gem install cocoaseeds
-write_section_start_to_formatted_output "## Current CocoaSeeds version"
+if [ ! -f "Seedfile" ]; then
+  write_section_to_formatted_output "# Error"
+  write_section_start_to_formatted_output '* Seedfile not found'
+  exit 1
+fi
+
 seed_version=$(seed --version)
 if [ $? -ne 0 ]; then
-	write_section_to_formatted_output "# Error"
-	write_section_start_to_formatted_output '* Failed to get current CocoaSeeds version'
-	exit 1
+  write_section_start_to_formatted_output "# Installing CocoaSeeds"
+  print_and_do_command_exit_on_error gem install cocoaseeds
+  seed_version=$(seed --version)
+  if [ $? -ne 0 ]; then
+  	write_section_to_formatted_output "# Error"
+  	write_section_start_to_formatted_output '* Failed to get current CocoaSeeds version'
+  	exit 1
+  fi
 fi
+write_section_start_to_formatted_output "## Current CocoaSeeds version"
 write_section_start_to_formatted_output "    ${seed_version}"
 
 write_section_to_formatted_output "# Run seed install"
