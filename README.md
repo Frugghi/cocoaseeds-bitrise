@@ -6,4 +6,4 @@ Simple build step for setting up your project with [CocoaSeeds](https://github.c
 
 Can be run directly with the [bitrise CLI](https://github.com/bitrise-io/bitrise) calling `bitrise run test`.
 
-*You must add `BITRISE_SOURCE_DIR` to your `.bitrise.secrets.yml` file before running the workflow!*
+*You must add `source_root_path` to your `.bitrise.secrets.yml` file before running the workflow!*
