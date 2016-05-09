@@ -1,9 +1,9 @@
 title: Run CocoaSeeds install
 summary: |-
-  You don't need to keep the installed seeds in your repo, simply add this step
-  and Bitrise will do the seed install for you on the VM!
+  Installs and runs CocoaSeeds install (`$ seed install`) for you.
 description: |-
-  Run CocoaSeeds install (`$ seed install`) in your App's directory.
+  Installs and runs CocoaSeeds install (`$ seed install`) for you.
+  For more information about CocoaSeeds, visit the [CocoaSeeds GitHub page](https://github.com/devxoul/CocoaSeeds).
 website: https://github.com/Frugghi/cocoaseeds-bitrise
 source_code_url: https://github.com/Frugghi/cocoaseeds-bitrise
 support_url: https://github.com/Frugghi/cocoaseeds-bitrise/issues
